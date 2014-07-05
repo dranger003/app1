@@ -70,11 +70,6 @@ void reset()
     }
 }
 
-void setup()
-{
-    reset();
-}
-
 void buttonDown(int c)
 {
     ctrls[c].pvs[RELAY].v = !ctrls[c].pvs[RELAY].v;
@@ -88,6 +83,11 @@ void buttonUp(int c)
 {
     analogWrite(ctrls[c].pvs[ctrls[c].pvs[RELAY].v].p, 0);
 	analogWrite(ctrls[c].pvs[BLUE].p, ctrls[c].pvs[BLUE].v);
+}
+
+void setup()
+{
+    reset();
 }
 
 void loop()
